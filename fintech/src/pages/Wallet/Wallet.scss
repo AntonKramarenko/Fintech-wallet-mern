@@ -1,0 +1,10 @@
+.wallet{
+padding: 30px;
+    &__btns{
+        max-width: 600px;
+        width: 100%;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+    }
+}

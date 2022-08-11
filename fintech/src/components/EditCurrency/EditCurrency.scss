@@ -1,0 +1,40 @@
+@import '../../styless/styles.scss';
+@import '../../styless/fonts.scss';
+@import '../../styless/colors.scss';
+
+
+.editCurrency{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+
+    &__btns{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+
+    &__select{
+        font-family: $font-family-card;
+        letter-spacing: 3px;
+        font-weight: 500;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        width: 100%;
+        border: $border;
+        border-radius: $border-radius-light;
+        background: $background;
+    }
+
+    input:nth-child(1){
+        grid-column-start: 1 ;
+        grid-column-end: 1;
+    }
+
+    div:nth-child(3){
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}

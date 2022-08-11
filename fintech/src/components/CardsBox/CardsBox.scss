@@ -1,0 +1,11 @@
+.cardsBox{
+
+    height: 200px;
+    padding-left: 10px;
+
+    &__title{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+}

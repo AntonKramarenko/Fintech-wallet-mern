@@ -1,0 +1,36 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+      ],
+    "rules": {
+        // This rule enforces the consistent use of either backticks, double, or single quotes.
+        // https://eslint.org/docs/latest/rules/quotes#js-toc-label
+        "quotes": ["warn", "single"],
+        "jsx-quotes": ["warn", "prefer-single"], 
+
+        // This rule enforces a consistent indentation style. The default style is 4 spaces.
+        // https://eslint.org/docs/latest/rules/indent#js-toc-label
+        "indent": ["warn", "tab"],
+
+        // This rule enforces consistent use of semicolons.
+        // https://eslint.org/docs/latest/rules/semi#js-toc-label
+        "semi": ["warn", "always"],
+
+        // This rule aims to maintain consistency around the spacing inside of template literals. 
+        // https://eslint.org/docs/latest/rules/template-curly-spacing#js-toc-label
+        "template-curly-spacing": ["warn", "always"],
+
+        // This rule enforces consistent spacing inside array brackets. 
+        // https://eslint.org/docs/latest/rules/array-bracket-spacing#js-toc-label
+        "array-bracket-spacing": ["warn", "always"],
+
+        // This rule enforces consistent use of trailing commas in object and array literals.
+        // https://eslint.org/docs/latest/rules/comma-dangle#js-toc-label
+        "comma-dangle": ["warn", "never"],
+
+        // No console or debugger in push
+        "no-console": ["warn"],
+        "no-debugger": ["warn"]
+    }
+}

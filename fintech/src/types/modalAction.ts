@@ -1,0 +1,5 @@
+export enum  MODAL_ACTION{
+    EDIT_CASH = 'EDIT_CASH',
+    ADD_CASH = 'ADD_CASH',
+    DEFAULT = 'DEFAULT'
+}

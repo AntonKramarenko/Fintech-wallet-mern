@@ -1,0 +1,10 @@
+@import '../../styless/styles.scss';
+.balanceBar{
+    border-right: $border;
+    position: fixed;
+    display: block;
+    max-width: 390px;
+    width: 100%;
+    height: 100vh;
+    padding: 30px  20px 20px 30px;
+}

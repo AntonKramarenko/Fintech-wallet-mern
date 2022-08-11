@@ -1,0 +1,17 @@
+.balanceItem{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin: 5px  0;
+    text-transform: capitalize;
+
+    &__amount{
+        display: flex;
+        align-items: center;
+    }
+
+    &__count{
+        text-transform: lowercase;
+        margin: 0 8px;
+    }
+}

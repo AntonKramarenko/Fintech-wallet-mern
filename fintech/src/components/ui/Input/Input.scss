@@ -1,0 +1,23 @@
+@import '../../../styless/styles.scss';
+@import '../../../styless/colors.scss';
+@import '../../../styless/fonts.scss';
+
+.input{
+    width: 100%;
+    border-radius: $border-radius-light;
+    
+    &__field{
+        font-family: $font-family-card;
+        letter-spacing: 3px;
+        font-weight: 500;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        width: 100%;
+        border: $border;
+        border-radius: $border-radius-light;
+        background: $background;
+    }
+    &__field::placeholder{
+        color: $color-primary;
+    }
+}

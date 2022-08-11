@@ -1,0 +1,29 @@
+@import '../../../styless/colors.scss';
+@import '../../../styless/styles.scss';
+@import '../../../styless/styles.scss';
+
+.btn{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 17px;
+    border-radius: $border-radius;
+    background-color: inherit;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+
+    &-light{
+        background-color: $color-primary-light;
+        
+    }
+
+    &-succes{
+        background-color: $color-succes;
+        width: 100%;
+        padding: 10px;
+    }
+    &-reject{
+        background-color: $color-reject;
+        width: 100%;
+        padding: 10px;
+    }
+}

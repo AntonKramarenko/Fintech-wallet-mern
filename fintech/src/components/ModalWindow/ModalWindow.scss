@@ -1,0 +1,24 @@
+@import '../../styless/styles.scss';
+@import '../../styless/colors.scss';
+
+
+.modalWindow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(205, 211, 211, 0.3);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    &__body{
+        padding: 50px;
+        border: $border;
+        border-radius: $border-radius;
+        width: 600px;
+        z-index: 100;
+        background-color: $color-primary-light;
+    }
+}
