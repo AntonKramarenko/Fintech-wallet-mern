@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
+import { BalanceItem } from '../ui/BalanceItem';
+import { calculateTotalBalance } from './calculateBalance';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { installTotalBalance, setCashBalance } from '../../store/balance';
 import { isVisibleModal } from '../../store/modalWindow';
-import { ITotalBalance } from '../../types/interfaces';
-import { calculateTotalBalance } from './calculateBalance';
-import { BalanceItem } from '../ui/BalanceItem';
-import './TotalBalance.scss';
 import { MODAL_ACTION } from '../../types/modalAction';
+import { ITotalBalance } from '../../types/interfaces';
+import './TotalBalance.scss';
 
-interface ITotalBalanceProp{
-}
-
-export const TotalBalance:React.FC<ITotalBalanceProp> = () => {
+export const TotalBalance:React.FC = () => {
 	const state = useAppSelector(state => state);
 	const dispatch = useAppDispatch();
-
 	const {balance, cards } = state;
 
 	useEffect(() => {
@@ -23,7 +19,6 @@ export const TotalBalance:React.FC<ITotalBalanceProp> = () => {
 			dispatch(setCashBalance(res[0].cashBalance));
 	  });
 	}, []);
-
 
 	useEffect(() => {
 		dispatch(installTotalBalance(calculateTotalBalance(cards, balance.cashBalance)));

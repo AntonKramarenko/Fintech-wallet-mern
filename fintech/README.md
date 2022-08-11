@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 4a65b66c4fad379d74c5766d5a9ff47ca3b106ab
 Для запуску проекту потірбно:
 1)cd backend
 2)npm run dev 3) cd ..

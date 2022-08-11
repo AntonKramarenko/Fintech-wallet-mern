@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { BalanceBar } from './components/BalanceBar';
 import { ModalWindow } from './components/ModalWindow';
 import { AddCard } from './pages/AddCard';
 import { Wallet } from './pages/Wallet';
-import { useAppDispatch, useAppSelector } from './store';
-import { setCards } from './store/cards';
+import { useAppSelector } from './store';
 import './styless/index.scss';
 
 function App() {

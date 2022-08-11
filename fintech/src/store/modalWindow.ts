@@ -22,8 +22,3 @@ export const modalWindowSlice = createSlice({
 
 export const { isVisibleModal} = modalWindowSlice.actions;
 export default modalWindowSlice.reducer;
-
-
-// addQuestion(state:IQuestionState[],action:PayloadAction<IQuestionState>){
-// 	state.push(action.payload)
-// },

@@ -1,11 +1,11 @@
 import React from 'react';
-import { EditCurrency } from '../EditCurrency';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import './ModalWindow.scss';
+import { EditCurrency } from '../EditCurrency';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { isVisibleModal } from '../../store/modalWindow';
 import { addCash, changeCash } from '../../store/balance';
 import { MODAL_ACTION } from '../../types/modalAction';
+import './ModalWindow.scss';
 
 type Inputs = {
     amount: string,
@@ -25,7 +25,6 @@ export const ModalWindow: React.FC = () => {
 		case MODAL_ACTION.EDIT_CASH: dispatch(changeCash(data));
 			break;
 		}
-		
 		dispatch(isVisibleModal({isVisible: false, action: MODAL_ACTION.DEFAULT }));
 	};
 

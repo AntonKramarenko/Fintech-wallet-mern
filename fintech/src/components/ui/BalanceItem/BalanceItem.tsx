@@ -12,7 +12,6 @@ interface IBalanceItem{
 }
 
 export const BalanceItem:React.FC<IBalanceItem> = ({bank,canEdit,balanceValue,balanceCurrency,click}) => {
-	
 	return (
 		<div className='balanceItem'>
 			<div className='balanceItem__amount'>

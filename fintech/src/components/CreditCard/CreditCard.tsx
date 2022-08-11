@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
+import { Button } from '../ui/Button';
 import { maskedNumber } from '../../helpers/maskedNumber';
 import { toCurrency } from '../../helpers/toCurrency';
-import './CreditCard.scss';
-import MasterCardLogo from '../../assets/schemaLogo/mastercard-logo.png';
-import VisaLogo from '../../assets/schemaLogo/visa-logo.png';
-import { Button } from '../ui/Button';
 import { useAppDispatch } from '../../store';
 import { setCards } from '../../store/cards';
-
+import MasterCardLogo from '../../assets/schemaLogo/mastercard-logo.png';
+import VisaLogo from '../../assets/schemaLogo/visa-logo.png';
+import './CreditCard.scss';
 
 interface ICreditCard{
 	bank?: string | undefined,
@@ -19,7 +18,7 @@ interface ICreditCard{
 	expDate: string
 }
 
-export const CreditCard: React.FC<ICreditCard> = ({bank='bank',scheme = 'schema',type = 'type',amount,cardNumber,expDate,currency}) => {
+export const CreditCard: React.FC<ICreditCard> = ({bank,scheme = 'scheme',type,amount,cardNumber,expDate,currency}) => {
 	const [ isCopy, setIsCopy ] = useState(false);
 	const dispatch = useAppDispatch();
 
@@ -38,15 +37,12 @@ export const CreditCard: React.FC<ICreditCard> = ({bank='bank',scheme = 'schema'
 		}
 	};
 
-
 	const deleteCardHandler = async (event) =>{
 		event.preventDefault();
 		 fetch('/cards', {
 			method: 'DELETE', 
 			body: JSON.stringify({cardNumber: cardNumber}),
-			headers: {
-			  'Content-Type': 'application/json'
-			}
+			headers: {'Content-Type': 'application/json'}
 		  }).then(res => res.json()).then(res => dispatch(setCards(res)));
 	};
 
@@ -71,6 +67,5 @@ export const CreditCard: React.FC<ICreditCard> = ({bank='bank',scheme = 'schema'
 			</div>
 			<Button title={'Видалити'} type={'reject'} active={true} styleType={'reject'} click={deleteCardHandler}/>
 		</div>
-		
 	);
 };

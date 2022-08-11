@@ -1,13 +1,11 @@
-import React,{useEffect} from 'react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { setCards } from '../../store/cards';
-import { IFullCardInfo } from '../../types/interfaces';
+import React from 'react';
 import { BalanceItem } from '../ui/BalanceItem';
+import { IFullCardInfo } from '../../types/interfaces';
+import {  useAppSelector } from '../../store';
 import './CardsBox.scss';
 
 export const CardsBox:React.FC = () => {
 	const cards = useAppSelector(state => state.cards);
-	
 
 	return (
 		<div className='cardsBox'>
