@@ -4,7 +4,6 @@ const cors = require("cors");
 const cashBalanceRoutes = require('./routes/cashBalance')
 const cardsRoutes = require('./routes/cards')
 
-
 const PORT = process.env.PORT || 3001
 
 const app = express()
@@ -23,7 +22,6 @@ async function start() {
         app.listen(PORT, () => {
             console.log(`Server starting on port ${PORT}`);
         })
-
     } catch (error) {
         console.log(error);
     }
