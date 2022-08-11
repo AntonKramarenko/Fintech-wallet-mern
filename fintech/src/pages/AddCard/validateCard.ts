@@ -24,8 +24,6 @@ export const isExpDate = (val:string) => {
 	}else{
 		return 'Введіть коректні числа';
 	}
-
-	
 };
 
 export const isCwValidate = (value:string) => {
