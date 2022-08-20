@@ -22,12 +22,14 @@ export const AddCard: React.FC = () => {
 			body: JSON.stringify(data),
 			headers: {'Content-Type': 'application/json'}
 			  })
-			.then(res => res.ok ? navigate('./wallet') : Promise.reject(res))
+			.then(res => res.ok ? navigate('./wallet')  : Promise.reject(res))
 			.catch(() =>{
 				setError('cardNumber' , {type: 'custom', message:'Перевірте правильність введених данних'});
 				setError('cw' , {type: 'custom', message:'Перевірте правильність введених данних'});
 				setError('expDate' , {type: 'custom', message:'Перевірте правильність введених данних'});
 			});
+
+		// navigate('./wallet') 
 
 	};
 

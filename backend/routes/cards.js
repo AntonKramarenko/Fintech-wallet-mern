@@ -11,9 +11,8 @@ router.get('/cards', async (req, res) => {
 router.post('/cards', async (req, res) => {
     try {
 
-        const fake = '9293392293'
-        // const bankInfo = await lookup(req.body.cardNumber.replaceAll(' ', '')).then(data => data)
-        const bankInfo = await lookup(fake).then(data => data)
+        const bankInfo = await lookup(req.body.cardNumber.replaceAll(' ', '')).then(data => data)
+
 
 
 
@@ -30,7 +29,7 @@ router.post('/cards', async (req, res) => {
             type: bankInfo.type
         })
         await cards.save()
-        return res.status(200)
+        return res.sendStatus(200)
 
 
 
