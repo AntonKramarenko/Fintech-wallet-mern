@@ -9,9 +9,13 @@ router.get('/cards', async (req, res) => {
 })
 
 router.post('/cards', async (req, res) => {
-
     try {
-        const bankInfo = await lookup(req.body.cardNumber.replaceAll(' ', '')).then(data => data)
+
+        const fake = '9293392293'
+        // const bankInfo = await lookup(req.body.cardNumber.replaceAll(' ', '')).then(data => data)
+        const bankInfo = await lookup(fake).then(data => data)
+
+
 
         const cards = new Cards({
             amount: req.body.amount,
@@ -25,13 +29,14 @@ router.post('/cards', async (req, res) => {
             scheme: bankInfo.scheme,
             type: bankInfo.type
         })
-
         await cards.save()
-        res.status(200).send(true)
+        return res.status(200)
+
 
 
     } catch (error) {
-        console.log(error);
+        return res.status(400).send(new Error())
+        console.log('error', error);
     }
 
 })

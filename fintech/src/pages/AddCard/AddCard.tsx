@@ -9,23 +9,26 @@ import './AddCard.scss';
 
 export const AddCard: React.FC = () => {
 	const navigate = useNavigate();
-	const {register, handleSubmit, formState: { errors }} = useForm<IAddCardInput>({
+	const {register, handleSubmit, setError, formState: { errors }} = useForm<IAddCardInput>({
 		mode: 'onBlur',
 		reValidateMode: 'onBlur',
 		shouldFocusError: true
 	});
 
 	const onSubmit: SubmitHandler<IAddCardInput> = async data => {
-		try {
-			await fetch('http://localhost:3001/cards', {
-				method: 'POST',
-				body: JSON.stringify(data),
-				headers: {'Content-Type': 'application/json'}
-			  });
-			  navigate('./wallet');
-		} catch (error) {
-			throw new Error();
-		}
+
+		await fetch('http://localhost:3001/cards', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {'Content-Type': 'application/json'}
+			  })
+			.then(res => res.ok ? navigate('./wallet') : Promise.reject(res))
+			.catch(() =>{
+				setError('cardNumber' , {type: 'custom', message:'Перевірте правильність введених данних'});
+				setError('cw' , {type: 'custom', message:'Перевірте правильність введених данних'});
+				setError('expDate' , {type: 'custom', message:'Перевірте правильність введених данних'});
+			});
+
 	};
 
 	const handleSucces = () => {};
