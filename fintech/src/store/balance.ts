@@ -38,15 +38,13 @@ export const cardBalanceSlice = createSlice({
 				state.cashBalance.push({currency: action.payload.currency, amount: +action.payload.amount});
 			}
 
-			fetch('/cashBalance', {
+			fetch('http://localhost:3001/cashBalance', {
 				method: 'POST', 
 				body: JSON.stringify(state.cashBalance),
 				headers: {
 				  'Content-Type': 'application/json'
 				}
 			  });
-
-
 		},
 		addCash(state:IInitialBalance,action:PayloadAction<{currency: string, amount: string}>){
 			let isHasAmount = false;
@@ -60,8 +58,7 @@ export const cardBalanceSlice = createSlice({
 				state.cashBalance.push({currency: action.payload.currency, amount: +action.payload.amount});
 			}
 
-			
-			fetch('/cashBalance', {
+			fetch('http://localhost:3001/cashBalance', {
 				method: 'POST', 
 				body: JSON.stringify(state.cashBalance),
 				headers: {

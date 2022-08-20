@@ -5,7 +5,6 @@ const amountConverter = (price:string, currency:string,location:string) =>{
 		style: 'currency',
 		currency: currency
 	}).format(parseInt(price));
-
 };
 
 export const toCurrency = (price:string,currency:string ) => {

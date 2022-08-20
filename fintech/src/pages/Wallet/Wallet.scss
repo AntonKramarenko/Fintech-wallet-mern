@@ -1,6 +1,9 @@
 .wallet{
-padding: 30px;
+    position: relative;
+    padding: 30px;
+
     &__btns{
+        margin: 20px;
         max-width: 600px;
         width: 100%;
         display: grid;

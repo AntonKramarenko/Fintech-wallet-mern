@@ -10,7 +10,6 @@ interface IButton{
 }
 
 export const Button:React.FC<IButton> = ({type, active,click,styleType,title}) => {
-
 	return (
 		<> 
 			{active && <button type='submit' onClick={click} className={`btn btn-${ styleType }`}>{title}</button>}

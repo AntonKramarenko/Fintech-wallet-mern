@@ -22,8 +22,8 @@ const input = {
 		min:{
 			value: 0,
 			message : 'Значення має бути більше 0'
-		},
-		validate: isValidAmount
+		}
+		// validate: isValidAmount
 	}
 };
 const selectOptions = [

@@ -9,22 +9,31 @@ router.get('/cards', async (req, res) => {
 })
 
 router.post('/cards', async (req, res) => {
-    const bankInfo = await lookup(req.body.cardNumber).then(data => data)
-    const cards = new Cards({
-        amount: req.body.amount,
-        bank: req.body.bank,
-        cardHolder: req.body.cardHolder,
-        cardNumber: req.body.cardNumber,
-        currency: req.body.currency,
-        cw: req.body.cw,
-        expDate: req.body.expDate,
-        bank: bankInfo.bank.name,
-        scheme: bankInfo.scheme,
-        type: bankInfo.type
-    })
 
-    await cards.save()
-    res.status(200).send(true)
+    try {
+        const bankInfo = await lookup(req.body.cardNumber.replaceAll(' ', '')).then(data => data)
+
+        const cards = new Cards({
+            amount: req.body.amount,
+            bank: req.body.bank,
+            cardHolder: req.body.cardHolder,
+            cardNumber: req.body.cardNumber,
+            currency: req.body.currency,
+            cw: req.body.cw,
+            expDate: req.body.expDate,
+            bank: bankInfo.bank.name,
+            scheme: bankInfo.scheme,
+            type: bankInfo.type
+        })
+
+        await cards.save()
+        res.status(200).send(true)
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
 })
 
 router.delete('/cards', async (req, res) => {

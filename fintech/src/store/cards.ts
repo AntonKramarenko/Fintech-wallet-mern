@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {  IFullCardInfo } from '../types/interfaces';
 
-
-
 const initialState:IFullCardInfo[] = [];
 
 export const cardsSlice = createSlice({

@@ -15,7 +15,6 @@ export const TotalBalance:React.FC = () => {
 
 	useEffect(() => {
 		fetch('/cashBalance',{method: 'GET'}).then(res => res.json()).then(res => {
-			console.log(res[0].cashBalance);
 			dispatch(setCashBalance(res[0].cashBalance));
 	  });
 	}, []);

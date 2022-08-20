@@ -3,6 +3,7 @@ import { isValidCardNumber,isExpDate, isCwValidate } from './validateCard';
 export const inputsValues = [
 	{id: 'cardNumber', 
 		placeholder: 'Card Number',
+		inputMask: '9999 9999 9999 9999',
 		options:{
 			required: {
 				value: true,
@@ -12,37 +13,23 @@ export const inputsValues = [
 				value: 16,
 				message: 'Мінімум  16  цифр'
 			},
-			maxLength:{
-				value: 16,
-				message: 'Максимум  16  цифр'
-			},
 			validate: isValidCardNumber
 		}
 	},
 	{id: 'expDate', 
 		placeholder: 'Exp. Date',
+		inputMask:'99/99',
 	 	options:{ 
 			required: {
 				value: true,
 				message : 'Поле обовʼязкове для введеня'
-			},
-			pattern:{
-				value:  /[1-9]/,
-				message : 'Введіть коректні данні'
-			},
-			minLength: {
-				value: 4,
-				message: 'Мінімум  4 цифри'
-			},
-			maxLength:{
-				value: 4,
-				message: 'Максимум  4  цифри'
 			},
 			validate: isExpDate
 		}
 	},
 	{id: 'cw',
 		placeholder: 'CW', 
+		inputMask: '999',
 		options:{
 			required: {
 				value: true,
