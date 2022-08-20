@@ -23,14 +23,15 @@ export const AddCard: React.FC = () => {
 			headers: {'Content-Type': 'application/json'}
 			  })
 			.then(res => res.ok ? navigate('./wallet')  : Promise.reject(res))
-			.catch(() =>{
-				setError('cardNumber' , {type: 'custom', message:'Перевірте правильність введених данних'});
-				setError('cw' , {type: 'custom', message:'Перевірте правильність введених данних'});
-				setError('expDate' , {type: 'custom', message:'Перевірте правильність введених данних'});
+			.catch((error) =>{
+				if(error.statusText === 'cardExist') {
+					setError('cardNumber' , {type: 'custom', message:'Така карта вже існує в гаманці'});
+				}else{
+					setError('cardNumber' , {type: 'custom', message:'Перевірте правильність введених данних'});
+					setError('cw', {type: 'custom', message:'Перевірте правильність введених данних'});
+					setError('expDate' , {type: 'custom', message:'Перевірте правильність введених данних'});
+				}
 			});
-
-		// navigate('./wallet') 
-
 	};
 
 	const handleSucces = () => {};
