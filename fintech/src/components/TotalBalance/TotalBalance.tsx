@@ -14,7 +14,7 @@ export const TotalBalance:React.FC = () => {
 	const {balance, cards } = state;
 
 	useEffect(() => {
-		fetch('/cashBalance',{method: 'GET'}).then(res => res.json()).then(res => {
+		fetch('https://fintech-wallet.herokuapp.com/cashBalance',{method: 'GET'}).then(res => res.json()).then(res => {
 			dispatch(setCashBalance(res[0].cashBalance));
 	  });
 	}, []);

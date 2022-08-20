@@ -8,6 +8,5 @@ module.exports = function isValidCardNumber(cardNumber) {
         .map((e, i) => (i % 2 === 0) ? calc(parseInt(e)) : parseInt(e))
         .reduce((prv, cur) => prv + cur) % 10 === 0;
 
-    console.log('currentNum, isValid', currentNum, isValid);
     return isValid
 };

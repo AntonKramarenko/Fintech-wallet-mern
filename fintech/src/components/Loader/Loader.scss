@@ -1,0 +1,53 @@
+@import '../../styless/colors.scss';
+
+.loader {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background;
+    z-index: 10;
+
+    &__body{
+        position: relative;
+        width: 200px;
+        height: 200px;
+
+        div{
+            position: absolute;
+            border: 4px solid blue;
+            border-radius: 50%;
+            animation: loader 1.5s ease-out infinite;
+        }
+
+        div:nth-child(2){
+            animation-delay: -0.5s;
+        }
+
+        div:nth-child(3){
+            animation-delay: -0.5s;
+        }
+    }
+}
+
+
+@keyframes loader{
+    0% {
+        top: 100px;
+        left:100px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        width: 200px;
+        height:200px;
+        opacity: 0;
+    }
+}

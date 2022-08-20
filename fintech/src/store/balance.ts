@@ -38,7 +38,7 @@ export const cardBalanceSlice = createSlice({
 				state.cashBalance.push({currency: action.payload.currency, amount: +action.payload.amount});
 			}
 
-			fetch('http://localhost:3001/cashBalance', {
+			fetch('https://fintech-wallet.herokuapp.com/cashBalance', {
 				method: 'POST', 
 				body: JSON.stringify(state.cashBalance),
 				headers: {
@@ -58,7 +58,7 @@ export const cardBalanceSlice = createSlice({
 				state.cashBalance.push({currency: action.payload.currency, amount: +action.payload.amount});
 			}
 
-			fetch('http://localhost:3001/cashBalance', {
+			fetch('https://fintech-wallet.herokuapp.com/cashBalance', {
 				method: 'POST', 
 				body: JSON.stringify(state.cashBalance),
 				headers: {

@@ -13,9 +13,9 @@ export const CardsBox:React.FC = () => {
 			{cards.length > 0 && cards.map(
 				(card:IFullCardInfo) => 
 					<BalanceItem 
-						key={card.cardNumber} 
+						key={card._id} 
 						bank={card.bank} 
-						canEdit={true} 
+						canEdit={false} 
 						balanceValue={card.amount} 
 						balanceCurrency={card.currency} 
 					/>)}

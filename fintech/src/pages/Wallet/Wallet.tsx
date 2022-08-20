@@ -1,24 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreditCard } from '../../components/CreditCard';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/Button';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { setCards } from '../../store/cards';
 import { isVisibleModal } from '../../store/modalWindow';
 import { MODAL_ACTION } from '../../types/modalAction';
 import './Wallet.scss';
 
-export const Wallet = () => {
+export const Wallet: React.FC = () => {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 	const cards = useAppSelector(state => state.cards);
-
-	useEffect(() => {
-		fetch('/cards',{method: 'GET'}).then(res => res.json()).then(res => {
-			  dispatch(setCards(res));
-		});
-	  }, []);
 
 	const addCardHandler = () =>navigate('/add');
 	const addCashHandler = () =>dispatch(isVisibleModal({isVisible: true, action: MODAL_ACTION.ADD_CASH}));

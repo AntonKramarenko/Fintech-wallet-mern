@@ -39,7 +39,7 @@ export const CreditCard: React.FC<ICreditCard> = ({bank,scheme = 'scheme',type,a
 
 	const deleteCardHandler = async (event) =>{
 		event.preventDefault();
-		 fetch('http://localhost:3001/cards', {
+		 fetch('https://fintech-wallet.herokuapp.com/cards', {
 			method: 'DELETE', 
 			body: JSON.stringify({cardNumber: cardNumber}),
 			headers: {'Content-Type': 'application/json'}

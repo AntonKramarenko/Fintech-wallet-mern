@@ -17,7 +17,7 @@ export const AddCard: React.FC = () => {
 
 	const onSubmit: SubmitHandler<IAddCardInput> = async data => {
 
-		await fetch('http://localhost:3001/cards', {
+		await fetch('https://fintech-wallet.herokuapp.com/cards', {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {'Content-Type': 'application/json'}

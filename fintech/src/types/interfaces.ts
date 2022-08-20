@@ -13,6 +13,7 @@ export interface IAddCardInput  {
 };
 
 export interface IFullCardInfo{
+	_id: string;
 	cardNumber: string,
 	expDate:string,
 	cw:string,
